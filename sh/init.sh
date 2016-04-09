@@ -39,6 +39,9 @@ sudo apt-get install vlc -y
 sudo apt-get install git -y
 sudo apt-get install g++ -y
 sudo apt-get install default-jdk -y
+sudo apt-get install npm -y
+ln -s /usr/bin/nodejs /usr/bin/node
+sudo npm install -g grunt-cli 
 
 #Atualização 
 sudo apt-get upgrade -y

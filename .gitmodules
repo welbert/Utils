@@ -1,0 +1,12 @@
+[submodule "JavaScript/jsPDF"]
+	path = JavaScript/jsPDF
+	url = https://github.com/MrRio/jsPDF.git
+[submodule "JavaScript/JavaScript-MD5"]
+	path = JavaScript/JavaScript-MD5
+	url = https://github.com/blueimp/JavaScript-MD5.git
+[submodule "FrameWorks/FrontEnd/bootstrap"]
+	path = FrameWorks/FrontEnd/bootstrap
+	url = https://github.com/twbs/bootstrap.git
+[submodule "FrameWorks/FrontEnd/jquery"]
+	path = FrameWorks/FrontEnd/jquery
+	url = https://github.com/jquery/jquery.git

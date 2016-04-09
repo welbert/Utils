@@ -1,0 +1,2 @@
+git submodule foreach git checkout .
+git submodule foreach git pull origin master
