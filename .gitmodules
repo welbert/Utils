@@ -10,3 +10,6 @@
 [submodule "FrameWorks/FrontEnd/jquery"]
 	path = FrameWorks/FrontEnd/jquery
 	url = https://github.com/jquery/jquery.git
+[submodule "JavaScript/js-keystroke"]
+	path = JavaScript/js-keystroke
+	url = https://github.com/evansolomon/js-keystroke.git
