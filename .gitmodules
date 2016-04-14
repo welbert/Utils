@@ -13,6 +13,9 @@
 [submodule "JavaScript/js-keystroke"]
 	path = JavaScript/js-keystroke
 	url = https://github.com/evansolomon/js-keystroke.git
-[submodule "css/Font-Awesome"]
-	path = css/Font-Awesome
+[submodule "font/Font-Awesome"]
+	path = font/Font-Awesome
 	url = https://github.com/FortAwesome/Font-Awesome.git
+[submodule "font/FiraCode"]
+	path = font/FiraCode
+	url = https://github.com/tonsky/FiraCode.git
