@@ -21,9 +21,9 @@ sudo apt-get install chromium-browser -y
 
 #Editor de Texto
 sudo apt-get install vim -y
-wget https://download.sublimetext.com/sublime-text_build-3103_amd64.deb
-sudo dpkg -i sublime-text_build-3103_amd64.deb
-rm sublime-text_build-3103_amd64
+wget https://atom.io/download/deb
+sudo dpkg -i atom-amd64.deb
+rm atom-amd64.deb
 
 #Ferramenta de Merge
 sudo apt-get install meld -y
