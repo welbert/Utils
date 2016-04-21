@@ -2,14 +2,16 @@
 /**
 * Colocar nas paginas que necessitam de login.
 * include("php/Function_login.php");
-* if(!checkLogin()[0])
+* if($result[1] == "SESSIONEXPIRED")
 *   header("Location: pages/sessaoexpirada.php");
+* else
+*   header("Location: login.php");
 * @author Welbert Serra
 */
 
    require 'php/connection_database.php';
    date_default_timezone_set("America/Sao_Paulo");
-   $_CONFIG['SESSION_TIME'] = 15; //15 min de sessão
+   $_CONFIG['SESSION_TIME'] = 900; //15 min de sessão
    $_CONFIG['TENTATIVAS'] = 3; //Limite de tentativas de login
 
    if (session_status() == PHP_SESSION_NONE) { //PHP >= 5.4
@@ -27,7 +29,7 @@
      $_SESSION['CHANCE'] = 0;
 
     if($_SESSION['CHANCE'] >= $_CONFIG['TENTATIVAS']){
-      return array(false,"Você errou a senha muitas vezes, aguarde até ".
+      return array(false,"LASTPASS","Você errou a senha muitas vezes, aguarde até ".
   			date("H:i",($_SESSION['CREATED']+$_CONFIG['SESSION_TIME']+60)));
     }else {
       $usuarioEscaped = addslashes($usuario);
@@ -40,14 +42,14 @@
       if($result->num_rows <= 0){
           $_SESSION['CHANCE'] += 1;
 
-        return array(false,"Não foi encontrado Usuario/Senha no sistema com esses dados. Tentativas: ".$_SESSION['CHANCE']."/3");
+        return array(false,"WRONGPASS","Não foi encontrado Usuario/Senha no sistema com esses dados. Tentativas: ".$_SESSION['CHANCE']."/3");
       }else{
          $result = $result->fetch_assoc();
          $_SESSION['USERID'] = $result["pes_id_pessoa"];
          $_SESSION['USERNAME'] = $usuario;
          $_SESSION['SECRET'] = $senha;
       }
-      return array(true);
+      return array(true,"","");
     }
    }
 
@@ -85,7 +87,7 @@
         $_SESSION['CREATED'] = time();
         session_unset();
         session_regenerate_id(true);
-        return array(false,"A sessão expirou, efetue o login novamente.");
+        return array(false,"SESSIONEXPIRED","A sessão expirou, efetue o login novamente.");
       }
       return array(true);
    }
