@@ -19,3 +19,6 @@
 [submodule "font/FiraCode"]
 	path = font/FiraCode
 	url = https://github.com/tonsky/FiraCode.git
+[submodule "FrameWorks/FrontEnd/jquery-mobile"]
+	path = FrameWorks/FrontEnd/jquery-mobile
+	url = https://github.com/jquery/jquery-mobile.git
