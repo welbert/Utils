@@ -26,5 +26,6 @@ REM "Programação"
 choco install git.install -y -params "/GitAndUnixToolsOnPath /NoAutoCrlf"
 choco install atom -y
 choco upgrade atom -y
+choco install sublimetext3 -y
 
 choco upgrade all -y
