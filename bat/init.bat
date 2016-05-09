@@ -1,11 +1,12 @@
 ﻿REM Instação do chocolatey
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 
-REM Navegadores
+REM "Navegadores"
 choco install googlechrome -y
 choco install firefox -y -packageParameters "l=pt-BR"
+choco install firefox-dev -pre -y
 
-REM essentials
+REM "Essentials"
 choco install flashplayerplugin -y
 choco install winrar -y
 choco install adobereader -y
@@ -14,6 +15,9 @@ choco install k-litecodecpackfull -y
 choco install ccleaner -y
 choco install teamspeak -y
 choco install teamviewer -y
+
+REM "Jogos"
+choco install steam -y
 
 REM "Criptografia"
 choco install gpg4win -y
