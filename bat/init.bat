@@ -1,4 +1,6 @@
-﻿REM Instação do chocolatey
+﻿reg export "HKEY_LOCAL_MACHINE" "C:\Users\%username%\Desktop\backupbeforeChocolatey.reg
+
+REM Instação do chocolatey
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
 
 REM "Navegadores"
@@ -19,6 +21,10 @@ choco install teamviewer -y
 REM "Jogos"
 choco install steam -y
 
+REM "Utilitários"
+choco install msiafterburner -y
+choco install processhacker.install -y
+
 REM "Criptografia"
 choco install gpg4win -y
 choco install veracrypt -y
@@ -31,5 +37,17 @@ choco install git.install -y -params "/GitAndUnixToolsOnPath /NoAutoCrlf"
 choco install atom -y
 choco upgrade atom -y
 choco install sublimetext3 -y
+choco install winmerge -y
 
+REM "Atualização"
 choco upgrade all -y
+
+REM "ConfiguraçãoGit"
+git config --global user.email "welberts@gmail.com"
+git config --global user.name "Welbert Serra"
+REM "ConfiguraçãoAutoRunUsbDisable"
+reg add "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v NoDriveTypeAutoRun /t REG_DWORD /d 4 /f
+
+
+reg export "HKEY_LOCAL_MACHINE" "C:\Users\%username%\Desktop\backupAfterChocolatey.reg
+
