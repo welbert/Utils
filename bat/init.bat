@@ -8,6 +8,9 @@ choco install googlechrome -y
 choco install firefox -y -packageParameters "l=pt-BR"
 choco install firefox-dev -pre -y
 
+REM "Email"
+choco install thunderbird -y -packageParameters "l=pt-BR"
+
 REM "Essentials"
 choco install flashplayerplugin -y
 choco install winrar -y
