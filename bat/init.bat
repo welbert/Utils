@@ -27,6 +27,7 @@ choco install steam -y
 REM "Utilitários"
 choco install msiafterburner -y
 choco install processhacker.install -y
+choco install everything -y
 
 REM "Criptografia"
 choco install gpg4win -y
