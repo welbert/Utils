@@ -3,7 +3,7 @@
 // @namespace   SAGRES Portal
 // @description Atualiza Dinamicamente as Horas
 // @include     http://www.tecnotrends.com.br/NovoPortal/Modules/Portal/*
-// @version     1.20
+// @version     1.21
 // @author      Welbert Serra
 // @grant       none
 // ==/UserScript==
@@ -102,6 +102,11 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
       getIdNames();
 
       /* VARIAVEIS */    
+      var red=255,green=155;
+      var circL = document.querySelector(".circ-cor");
+      red = red - parseFloat(circL.style.height.replace("%",""));
+      green = green + parseFloat(circL.style.height.replace("%",""));
+      circL.style.background = "rgb("+String(Math.round(red))+","+String(Math.round(green))+",0)";
       var cargaHoraria = document.getElementById(idCargaHoraria).innerHTML.replace("h","");
       var percent = 100/(parseInt(cargaHoraria)*60);
       //------------------VARIAVEIS DE HORAS RESTANTES--------------------------------
@@ -151,11 +156,12 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
                                  addZeroBefore(dateTrabalhadas.getHours())+":"+addZeroBefore(dateTrabalhadas.getMinutes())+"h";
 
 
-        /* Circulo Laranja */    
-        var circL = document.querySelector(".circ-cor");
+        /* Circulo Laranja */          
         var circLHeight = parseFloat(circL.style.height.replace("%",""))+percent;
         circL.style.height = circLHeight+"%";
-        circL.style.background = "rgb("+String(Math.round(255-(100*percent)))+","+String(Math.round(155+(100*percent)))+",0)";
+        red = red-(percent);
+        green = green+(percent);
+        circL.style.background = "rgb("+String(Math.round(red))+","+String(Math.round(green))+",0)";
 
       },60*1000);
     }else{
