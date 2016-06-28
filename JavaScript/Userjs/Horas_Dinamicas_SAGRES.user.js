@@ -3,7 +3,7 @@
 // @namespace   SAGRES Portal
 // @description Atualiza Dinamicamente as Horas
 // @include     http://www.tecnotrends.com.br/NovoPortal/Modules/Portal/*
-// @version     1.21
+// @version     1.22
 // @author      Welbert Serra
 // @grant       none
 // ==/UserScript==
@@ -104,9 +104,12 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
       /* VARIAVEIS */    
       var red=255,green=155;
       var circL = document.querySelector(".circ-cor");
-      red = red - parseFloat(circL.style.height.replace("%",""));
-      green = green + parseFloat(circL.style.height.replace("%",""));
-      circL.style.background = "rgb("+String(Math.round(red))+","+String(Math.round(green))+",0)";
+      setTimeout(function () {
+          red = red - parseFloat(circL.style.height.replace("%",""));
+          green = green + parseFloat(circL.style.height.replace("%",""));
+          console.log("Red - "+red+" ;; Green -"+green+" ;; PercentHora - "+circL.style.height.replace("%",""));
+          circL.style.background = "rgb("+String(Math.round(red))+","+String(Math.round(green))+",0)";
+      },500);
       var cargaHoraria = document.getElementById(idCargaHoraria).innerHTML.replace("h","");
       var percent = 100/(parseInt(cargaHoraria)*60);
       //------------------VARIAVEIS DE HORAS RESTANTES--------------------------------
