@@ -3,7 +3,7 @@
 // @namespace   SAGRES Portal
 // @description Atualiza Dinamicamente as Horas
 // @include     http://www.tecnotrends.com.br/NovoPortal/Modules/Portal/*
-// @version     1.19
+// @version     1.20
 // @author      Welbert Serra
 // @grant       none
 // ==/UserScript==
@@ -155,6 +155,7 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
         var circL = document.querySelector(".circ-cor");
         var circLHeight = parseFloat(circL.style.height.replace("%",""))+percent;
         circL.style.height = circLHeight+"%";
+        circL.style.background = "rgb("+String(Math.round(255-(100*percent)))+","+String(Math.round(155+(100*percent)))+",0)";
 
       },60*1000);
     }else{
