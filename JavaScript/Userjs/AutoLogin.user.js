@@ -9,6 +9,10 @@
 // ==/UserScript==
 //console.log("teste0");
 
+var user = "trends";
+var pass = "trends";
+var url = "http://localhost:64437/Account/Login.aspx";
+
 function setCookie(cname, cvalue) {
     var d = new Date();
     d.setTime(d.getTime() + (365*24*60*60*1000));
@@ -29,8 +33,8 @@ function getCookie(cname) {
 
 if (document.location.pathname.toLowerCase().endsWith('login.aspx')){
     //console.log("teste2");
-    document.getElementById("ctl00_MasterPlaceHolder_LoginUser_UserName").value = "trends";
-    document.getElementById("ctl00_MasterPlaceHolder_LoginUser_Password").value = "trends";
+    document.getElementById("ctl00_MasterPlaceHolder_LoginUser_UserName").value = user;
+    document.getElementById("ctl00_MasterPlaceHolder_LoginUser_Password").value = pass;
     document.getElementById('ctl00_MasterPlaceHolder_LoginUser_LoginButton').click();
   }
 //console.log("teste-1");
@@ -44,7 +48,7 @@ $(document).ready(function(){
      document.location.pathname.toLowerCase().endsWith('invalidtoken.aspx')){
     //console.log("teste1");
       //setTimeout(function(){ window.location="http://localhost/Academico.WebApp/Account/Login.aspx"; }, 500);
-    setTimeout(function(){ window.location=" http://localhost:64437/Account/Login.aspx"; }, 500);
+    setTimeout(function(){ window.location=url; }, 500);
      //window.location="http://localhost/Academico.WebApp/Account/Login.aspx";
 
   }
