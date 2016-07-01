@@ -8,6 +8,12 @@
 // @grant       none
 // ==/UserScript==
 
+//setInterval(function () {
+//    $('.aLogout').click();
+//  }, 15 * 60 * 1000);
+
 setInterval(function () {
+  var sessionTime = $(".session_text")[0].innerHTML.split('m')[0];
+  if(sessionTime < 2)
     $('.aLogout').click();
-  }, 15 * 60 * 1000);
+}, 60 * 1001);
