@@ -40,8 +40,8 @@ sudo apt-get install git -y
 sudo apt-get install g++ -y
 sudo apt-get install default-jdk -y
 sudo apt-get install npm -y
-sudo ln -s /usr/bin/nodejs /usr/bin/node
-sudo npm install -g grunt-cli 
+sudo npm install npm -g
+
 
 #Atualização 
 sudo apt-get upgrade -y
