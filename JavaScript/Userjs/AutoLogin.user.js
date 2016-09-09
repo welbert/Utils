@@ -3,11 +3,10 @@
 // @namespace   localhost
 // @include     http://localhost/Academico.WebApp/*
 // @include     http://localhost:64437/*
-// @include     http://produtos07:91/WebApps/*
-// @version     1
+// @version     1.1
 // @grant       none
+// @author      Welbert Serra
 // ==/UserScript==
-//console.log("teste0");
 
 var user = "trends";
 var pass = "trends";
@@ -32,24 +31,17 @@ function getCookie(cname) {
 }
 
 if (document.location.pathname.toLowerCase().endsWith('login.aspx')){
-    //console.log("teste2");
     document.getElementById("ctl00_MasterPlaceHolder_LoginUser_UserName").value = user;
     document.getElementById("ctl00_MasterPlaceHolder_LoginUser_Password").value = pass;
     document.getElementById('ctl00_MasterPlaceHolder_LoginUser_LoginButton').click();
   }
-//console.log("teste-1");
 $(document).ready(function(){
-  //console.log("teste-2");
-
-
-  //console.log("teste");
+ 
   if (document.location.pathname.toLowerCase().endsWith('sessaoexpirou.aspx') ||
      document.location.pathname.toLowerCase().endsWith('forbidden.aspx') ||
      document.location.pathname.toLowerCase().endsWith('invalidtoken.aspx')){
-    //console.log("teste1");
-      //setTimeout(function(){ window.location="http://localhost/Academico.WebApp/Account/Login.aspx"; }, 500);
+    
     setTimeout(function(){ window.location=url; }, 500);
-     //window.location="http://localhost/Academico.WebApp/Account/Login.aspx";
 
   }
 
@@ -57,12 +49,17 @@ $(document).ready(function(){
   if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
       var origopenPage = openPage;
     window.openPage = function(page) {
+      console.log(page.Features.Width);
          setCookie("Url",page.Url);
+         setCookie("Width",page.Features.Width);
+         setCookie("Height",page.Features.Height);
          return origopenPage(page);
     }
     var urlCookie = getCookie("Url");
+    var widthCookie = getCookie("Width");
+    var heightCookie = getCookie("Height");
     if(urlCookie!="")
-     javascript:void openPage({"Url":urlCookie,"IsStableVersion":true,"Features":{"Width":900,"Height":520}}); //"/Academico.WebApp/Pages/Servicos/CancelarClasse.aspx"
+     javascript:void openPage({"Url":urlCookie,"IsStableVersion":true,"Features":{"Width":widthCookie,"Height":heightCookie}});
 
   }
 });
