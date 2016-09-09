@@ -3,7 +3,7 @@
 // @namespace   localhost
 // @include     http://localhost/Academico.WebApp/*
 // @include     http://localhost:64437/*
-// @version     1.1
+// @version     1.2
 // @grant       none
 // @author      Welbert Serra
 // ==/UserScript==
@@ -49,7 +49,6 @@ $(document).ready(function(){
   if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
       var origopenPage = openPage;
     window.openPage = function(page) {
-      console.log(page.Features.Width);
          setCookie("Url",page.Url);
          setCookie("Width",page.Features.Width);
          setCookie("Height",page.Features.Height);
