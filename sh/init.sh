@@ -21,7 +21,7 @@ sudo apt-get install chromium-browser -y
 
 #Editor de Texto
 sudo apt-get install vim -y
-wget https://atom.io/download/deb
+wget https://atom.io/download/deb -O atom-amd64.deb
 sudo dpkg -i atom-amd64.deb
 rm atom-amd64.deb
 
