@@ -35,20 +35,21 @@ sudo apt-get install rar -y
 sudo apt-get install nautilus-open-terminal -y
 sudo apt-get install vlc -y
 
-#Programação
+#ProgramaÃ§Ã£o
+sudo apt-get install build-essential
 sudo apt-get install git -y
-sudo apt-get install g++ -y
 sudo apt-get install default-jdk -y
-sudo apt-get install npm -y
-sudo npm install npm -g
+sudo wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+nvm install 'lts/*'
+nvm use 'lts/*'
 
 
-#Atualização 
+#AtualizaÃ§Ã£o 
 sudo apt-get upgrade -y
 sudo apt-get autoremove -y
 sudo apt-get autoclean -y
 
-#Configurações
+#ConfiguraÃ§Ãµes
 nautilus -q
 git config --global user.email "welberts@gmail.com"
 git config --global user.name "Welbert Serra"
