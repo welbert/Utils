@@ -32,7 +32,6 @@ sudo apt-get install meld -y
 sudo apt-get install dconf-tools -y
 sudo apt-get install gimp -y
 sudo apt-get install rar -y
-sudo apt-get install nautilus-open-terminal -y
 sudo apt-get install vlc -y
 
 #Programação
