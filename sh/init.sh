@@ -41,6 +41,8 @@ sudo apt-get install default-jdk -y
 sudo wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
 nvm install 'lts/*'
 nvm alias default 'lts/*'
+#Node for all user
+#n=$(which node);n=${n%/bin/node}; chmod -R 755 $n/bin/*; sudo cp -r $n/{bin,lib,share} /usr/local
 
 
 #Atualização 
