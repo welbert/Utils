@@ -3,7 +3,7 @@
 // @namespace   SAGRES Portal
 // @description Atualiza Dinamicamente as Horas
 // @include     http://www.tecnotrends.com.br/NovoPortal/*
-// @version     1.23
+// @version     1.25
 // @author      Welbert Serra
 // @grant       none
 // ==/UserScript==
@@ -175,9 +175,11 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
 }
 
 if (document.location.pathname.toLowerCase().endsWith('acesso.aspx')){ 
-  if(document.getElementById('ctl00_PageContent_LoginPanel_UserName').value && 
-      document.getElementById('ctl00_PageContent_LoginPanel_Password').value){
-    
-    document.getElementById('ctl00_PageContent_LoginPanel_LoginButton').click();
-  }
+  console.log("Horas Dinâmicas SAGRES by Welbert Serra");
+  setTimeout(function () {
+    if(document.getElementById('ctl00_PageContent_LoginPanel_UserName').value && 
+        document.getElementById('ctl00_PageContent_LoginPanel_Password').value){
+            document.getElementById('ctl00_PageContent_LoginPanel_LoginButton').click();    
+    }
+  },500);
 }
