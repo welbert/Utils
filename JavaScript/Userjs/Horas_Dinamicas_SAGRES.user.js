@@ -2,8 +2,8 @@
 // @name        Horas Dinamicas SAGRES
 // @namespace   SAGRES Portal
 // @description Atualiza Dinamicamente as Horas
-// @include     http://www.tecnotrends.com.br/NovoPortal/Modules/Portal/*
-// @version     1.22
+// @include     http://www.tecnotrends.com.br/NovoPortal/*
+// @version     1.23
 // @author      Welbert Serra
 // @grant       none
 // ==/UserScript==
@@ -89,7 +89,7 @@ function getIdNames(){
 }
 
 if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
-  
+  console.log("Horas Dinâmicas SAGRES by Welbert Serra");
   Notification.requestPermission();
   
   setInterval(function () {
@@ -107,7 +107,7 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
       setTimeout(function () {
           red = red - parseFloat(circL.style.height.replace("%",""));
           green = green + parseFloat(circL.style.height.replace("%",""));
-          console.log("Red - "+red+" ;; Green -"+green+" ;; PercentHora - "+circL.style.height.replace("%",""));
+          //console.log("Red - "+red+" ;; Green -"+green+" ;; PercentHora - "+circL.style.height.replace("%",""));
           circL.style.background = "rgb("+String(Math.round(red))+","+String(Math.round(green))+",0)";
       },500);
       var cargaHoraria = document.getElementById(idCargaHoraria).innerHTML.replace("h","");
@@ -131,7 +131,7 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
       dateTrabalhadas.setMinutes(timeTrabalhadas[1]);
       //-------------------------------------------------------------------------------
 
-      console.log((dateRestantes.getHours() * 60 * 60 * 1000)+ (dateRestantes.getMinutes() * 60 * 1000));
+      //console.log((dateRestantes.getHours() * 60 * 60 * 1000)+ (dateRestantes.getMinutes() * 60 * 1000));
       if(document.getElementById(idTipoHoras).innerHTML=="restantes"){      
        var intervalExtra = setInterval(function () {
          document.getElementById(idTipoHoras).innerHTML="extras";       
@@ -172,4 +172,12 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
       alert('Observação: Não foi dado entrada no ponto.');
     }
    });
+}
+
+if (document.location.pathname.toLowerCase().endsWith('acesso.aspx')){ 
+  if(document.getElementById('ctl00_PageContent_LoginPanel_UserName').value && 
+      document.getElementById('ctl00_PageContent_LoginPanel_Password').value){
+    
+    document.getElementById('ctl00_PageContent_LoginPanel_LoginButton').click();
+  }
 }
