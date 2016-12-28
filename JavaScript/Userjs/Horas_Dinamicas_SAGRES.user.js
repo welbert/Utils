@@ -3,7 +3,7 @@
 // @namespace   SAGRES Portal
 // @description Atualiza Dinamicamente as Horas
 // @include     http://www.tecnotrends.com.br/NovoPortal/*
-// @version     1.25
+// @version     1.26
 // @author      Welbert Serra
 // @grant       none
 // ==/UserScript==
@@ -31,7 +31,7 @@ function spawnNotification(title,message) {
 function CustomNotification(title,message) {
   var options = {
       body: message,
-      icon: "http://www.tecnotrends.com.br/NovoPortal/App_Themes/NewTheme/Images/Topo/logomarca-invertida.png"
+      icon: "http://www.tecnotrends.com.br/NovoPortal/App_Themes/NewTheme/Images/marcas/MarcaFundoEscuro.png"
   }
   
   var notification = new Notification(title,options);
@@ -86,6 +86,11 @@ function getIdNames(){
     }    
   }
   
+}
+
+function insertMenu(menu,url){
+  var node = document.querySelector('#ctl00_ConteudoTopo_ContServices');
+  node.innerHTML+= '<li><a href="'+url+'" target="_blank">'+menu+'</a></li>';
 }
 
 if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
@@ -172,6 +177,7 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
       alert('Observação: Não foi dado entrada no ponto.');
     }
    });
+  insertMenu('Wiki','http://trendssp/sites/wiki/default.aspx');
 }
 
 if (document.location.pathname.toLowerCase().endsWith('acesso.aspx')){ 
