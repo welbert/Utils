@@ -3,6 +3,7 @@
 // @namespace   SAGRES Portal
 // @description Atualiza Dinamicamente as Horas
 // @include     http://www.tecnotrends.com.br/NovoPortal/*
+// @include     http://www.tecnotrends.com.br/PortalSagres/*
 // @version     1.27
 // @author      Welbert Serra
 // @grant       none
