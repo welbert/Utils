@@ -4,7 +4,7 @@
 // @description Atualiza Dinamicamente as Horas
 // @include     http://www.tecnotrends.com.br/NovoPortal/*
 // @include     http://www.tecnotrends.com.br/PortalSagres/*
-// @version     1.27
+// @version     1.28
 // @author      Welbert Serra
 // @grant       none
 // ==/UserScript==
