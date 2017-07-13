@@ -4,7 +4,7 @@
 // @description Atualiza Dinamicamente as Horas
 // @include     http://www.tecnotrends.com.br/NovoPortal/*
 // @include     http://www.tecnotrends.com.br/PortalSagres/*
-// @version     1.28
+// @version     1.29
 // @author      Welbert Serra
 // @grant       none
 // ==/UserScript==
@@ -66,8 +66,9 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
   Notification.requestPermission();
   
   setInterval(function () {
+    console.log("Session Renewed");
     $('.aRenewSession').click();
-  }, 28 * 60 * 1000);
+  }, 15 * 60 * 1000);
   
   $(document).ready(function(){
     
@@ -164,9 +165,7 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
    });
     
   insertMenu('Wiki','http://trendssp/sites/wiki/default.aspx');
-}
-
-if (document.location.pathname.toLowerCase().endsWith('acesso.aspx')){ 
+}else if (document.location.pathname.toLowerCase().endsWith('acesso.aspx')){ 
   console.log("Horas Dinâmicas SAGRES by Welbert Serra");
   setTimeout(function () {
     if(document.getElementById('ctl00_PageContent_LoginPanel_UserName').value && 
@@ -174,4 +173,10 @@ if (document.location.pathname.toLowerCase().endsWith('acesso.aspx')){
             document.getElementById('ctl00_PageContent_LoginPanel_LoginButton').click();    
     }
   },500);
+}else{
+  console.log("Horas Dinâmicas SAGRES by Welbert Serra");
+  setInterval(function () {
+    console.log("Session Renewed");
+    $('.aRenewSession').click();
+  }, 15 * 60 * 1000);
 }
