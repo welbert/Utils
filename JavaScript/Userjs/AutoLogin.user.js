@@ -3,9 +3,8 @@
 // @namespace   localhost
 // @include     http://localhost/Academico.WebApp/*
 // @include     http://localhost:64437/*
-// @version     1.2
+// @version     1.3
 // @grant       none
-// @author      Welbert Serra
 // ==/UserScript==
 
 var user = "trends";
@@ -47,7 +46,7 @@ $(document).ready(function(){
 
 
   if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
-      var origopenPage = openPage;
+    var origopenPage = openPage;
     window.openPage = function(page) {
          setCookie("Url",page.Url);
          setCookie("Width",page.Features.Width);
@@ -59,6 +58,10 @@ $(document).ready(function(){
     var heightCookie = getCookie("Height");
     if(urlCookie!="")
      javascript:void openPage({"Url":urlCookie,"IsStableVersion":true,"Features":{"Width":widthCookie,"Height":heightCookie}});
-
+      
+    setInterval(function () {
+       console.log("Session Renewed");
+       $('.aRenewSession').click();
+    }, 15 * 60 * 1000);
   }
 });
