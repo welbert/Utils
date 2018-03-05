@@ -4,7 +4,7 @@
 // @description Atualiza Dinamicamente as Horas
 // @include     http://www.tecnotrends.com.br/NovoPortal/*
 // @include     http://www.tecnotrends.com.br/PortalSagres/*
-// @version     1.29
+// @version     1.30
 // @author      Welbert Serra
 // @grant       none
 // ==/UserScript==
@@ -74,21 +74,22 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
     
     if(document.querySelector('.registro-ponto-tabela').childElementCount>1){
       //getIdNames();
+      /* Lógica para avisar da volta do intervalo
       if(document.querySelector('[id*="0_tdHoraFinal"]') && !document.querySelector('[id*="1_tdHoraInicial"]')){
         var dateFinal = new Date(),dateIntervalo = new Date();
         var dateFinalString = document.querySelector('[id*="0_tdHoraFinal"]').innerHTML.split(':');
         dateFinal.setHours(dateFinalString[0]);
         dateFinal.setMinutes(dateFinalString[1]);
-        if(parseInt(document.querySelector('[id*=cargaHoraria]').innerHTML)==8){
+        if(parseInt(document.querySelector('[id*=CargaHoraria]').innerHTML)==8){
           //Intervalo de 1h
         }else{
           //Intervalo de 30min
         }
-      }
-        idHorasRestantes = document.querySelector('[id*=horasRestantes]').id;
-        idTipoHoras = document.querySelector('[id*=tipoHora]').id;
-        idHorasTrabalhadas = document.querySelector('[id*=horasTrabalhadas]').id;
-        idCargaHoraria = document.querySelector('[id*=cargaHoraria]').id;
+      }*/
+        idHorasRestantes = document.querySelector('[id*=HorasRestantes]').id;
+        idTipoHoras = document.querySelector('[id*=TipoHora]').id;
+        idHorasTrabalhadas = document.querySelector('[id*=HorasTrabalhadas]').id;
+        idCargaHoraria = document.querySelector('[id*=CargaHoraria]').id;
 
         /* VARIAVEIS */    
         var red=255,green=155;
@@ -172,7 +173,7 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
         document.getElementById('ctl00_PageContent_LoginPanel_Password').value){
             document.getElementById('ctl00_PageContent_LoginPanel_LoginButton').click();    
     }
-  },500);
+  },1000);
 }else{
   console.log("Horas Dinâmicas SAGRES by Welbert Serra");
   setInterval(function () {
