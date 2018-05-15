@@ -87,9 +87,9 @@ if (document.location.pathname.toLowerCase().endsWith('default.aspx')){
         }
       }*/
         idHorasRestantes = document.querySelector('[id*=HorasRestantes]').id;
-        idTipoHoras = document.querySelector('[id*=TipoHora]').id;
+        idTipoHoras = document.querySelector('[id*=tipoHora]').id;
         idHorasTrabalhadas = document.querySelector('[id*=HorasTrabalhadas]').id;
-        idCargaHoraria = document.querySelector('[id*=CargaHoraria]').id;
+        idCargaHoraria = document.querySelector('[id*=cargaHoraria]').id;
 
         /* VARIAVEIS */    
         var red=255,green=155;
