@@ -1,4 +1,4 @@
-﻿reg export "HKEY_LOCAL_MACHINE" "C:\Users\%username%\Desktop\backupbeforeChocolatey.reg
+reg export "HKEY_LOCAL_MACHINE" "C:\Users\%username%\Desktop\backupbeforeChocolatey.reg
 
 REM Instação do chocolatey
 @powershell -NoProfile -ExecutionPolicy Bypass -Command "iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))" && SET PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin
@@ -12,14 +12,15 @@ REM "Email"
 choco install thunderbird -y -packageParameters "l=pt-BR"
 
 REM "Essentials"
-choco install flashplayerplugin -y
 choco install winrar -y
-choco install adobereader -y
-choco install jdk8 -y -params "x64=true"
+choco install foxitreader -y
 choco install k-litecodecpackfull -y
+choco install vlc -y
 choco install ccleaner -y
 choco install teamspeak -y
 choco install teamviewer -y
+choco install discord.install -y
+choco install chocolateygui -y
 
 REM "Jogos"
 choco install steam -y
@@ -28,6 +29,7 @@ REM "Utilitários"
 choco install msiafterburner -y
 choco install processhacker.install -y
 choco install everything -y
+choco install f.lux.install -y
 
 REM "Criptografia"
 choco install gpg4win -y
@@ -42,6 +44,7 @@ choco install atom -y
 choco upgrade atom -y
 choco install sublimetext3 -y
 choco install winmerge -y
+choco install nodejs-lts -y
 
 REM "Atualização"
 choco upgrade all -y
