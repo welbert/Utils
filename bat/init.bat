@@ -30,6 +30,10 @@ choco install msiafterburner -y
 choco install processhacker.install -y
 choco install everything -y
 choco install f.lux.install -y
+choco install lightshot.install
+
+REM "Fontes"
+choco install firacode-ttf -y
 
 REM "Criptografia"
 choco install gpg4win -y
@@ -40,8 +44,6 @@ choco install virtualbox -y
 
 REM "Programação"
 choco install git.install -y -params "/GitAndUnixToolsOnPath /NoAutoCrlf"
-choco install atom -y
-choco upgrade atom -y
 choco install sublimetext3 -y
 choco install winmerge -y
 choco install nodejs-lts -y
