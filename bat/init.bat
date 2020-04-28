@@ -30,7 +30,7 @@ choco install msiafterburner -y
 choco install processhacker.install -y
 choco install everything -y
 choco install f.lux.install -y
-choco install lightshot.install
+choco install lightshot.install -y
 
 REM "Fontes"
 choco install firacode-ttf -y
